@@ -160,32 +160,34 @@ S에 시작 T에 끝나는 N개의 수업
 #     else:
 #         print("Impossible")
     
-def bfs(y,n, width , diagnal1 , diagnal2):
-        ans = 0
-        if y==n:
-            ans+=1
-        else:
-            for i in range(n):
-                try:
-                    if width[i] or diagnal1[y+i] or diagnal2[y-i+n-1]:
-                        continue
-                    # 말 놓기
-                    width[i] = diagnal1[y+i] = diagnal2[y-i+n-1] = True
-                except Exception as e:
-                    print((y,i , y+i , y-i+n) , width , diagnal1 , diagnal2)
+# def bfs(y,n, width , diagnal1 , diagnal2):
+#         ans = 0
+#         if y==n:
+#             ans+=1
+#         else:
+#             for i in range(n):
+#                 try:
+#                     if width[i] or diagnal1[y+i] or diagnal2[y-i+n-1]:
+#                         continue
+#                     # 말 놓기
+#                     width[i] = diagnal1[y+i] = diagnal2[y-i+n-1] = True
+#                 except Exception as e:
+#                     print((y,i , y+i , y-i+n) , width , diagnal1 , diagnal2)
 
-                ans += bfs(y+1 , n , width , diagnal1 , diagnal2)
-                # 백 트래킹
-                width[i] = diagnal1[y+i] = diagnal2[y-i+n-1] = False
-        return ans
+#                 ans += bfs(y+1 , n , width , diagnal1 , diagnal2)
+#                 # 백 트래킹
+#                 width[i] = diagnal1[y+i] = diagnal2[y-i+n-1] = False
+#         return ans
     
-def solution(n):
+# def solution(n):
             
-    ans = bfs(0,n,[False]*n , [False]*(2*n-1) , [False]*(2*n-1))
-    return ans
-print(solution(1))
+#     ans = bfs(0,n,[False]*n , [False]*(2*n-1) , [False]*(2*n-1))
+#     return ans
+# print(solution(1))
+
 
             
+
 
     
     
