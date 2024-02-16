@@ -9,6 +9,7 @@ N개의 물건은 무게 W와 가치 V를 가짐
 2) 가방의 무게가 아직 다 차지 않은 경우
  2-1 : 해당 번째 가방을 넣는다.
  2-2 : 해당 번째 가방을 넣지 않는다. 
+ https://codingmovie.tistory.com/48
  
 '''
 import sys
@@ -35,6 +36,7 @@ for i in range(1,N+1): # 1~N번째
             D[i][j] = D[i-1][j] # when current weight over max_weight (i)st max value == (i-1)st max value
         else:
             D[i][j] = max(D[i-1][j-w]+v , D[i-1][j])
+print(D)
 print(D[N][K])
             
     
