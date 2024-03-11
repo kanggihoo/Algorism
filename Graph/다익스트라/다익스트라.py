@@ -98,12 +98,12 @@ def dijkstra(start):
     distance[start] = 0
     while q:
         
-        cost , now = heapq.heappop(q)
-        if distance[now] < cost:
+        ccost , now = heapq.heappop(q)
+        if distance[now] == INF:
             continue
         
         for j , cost in graph[now]:
-            tmp_cost = distance[now] + cost
+            tmp_cost = ccost + cost
             
             if tmp_cost < distance[j]:
                 distance[j] = tmp_cost

@@ -29,9 +29,9 @@ PQ.put((distacne[S] , S))
 while not PQ.empty():
     
     now_cost , now_node = PQ.get() # 큐에 들어 있는 값들 중 distance 값이 가장 작은 것이 우선적으로 빠짐
-    if visited[now_node]: # 큐에서 나온적이 있는 노드인경우 pass
+    if distacne[now_node] == INF: # 큐에서 나온적이 있는 노드인경우 pass
         continue
-    visited[now_node] = True
+    # visited[now_node] = True
     
     # 현재 노드에 인접한 모든 노드 검사 
     for next_node , next_cost in graph[now_node]:
