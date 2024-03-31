@@ -42,6 +42,21 @@ print(D[N][K])
     
     
    
+## TOP DOWN 방식
+def topdown(n,k):
+    weight = A[n-1][0]
+    v = A[n-1][1]
+    if k < 0 :
+        return 0
+    if n ==0:
+        return 0
+    if k < weight :
+        return D[n-1][k]
+    else:
+        D[n][k] = max(topdown(n-1, k-weight)+v , topdown(n-1 , k))        
+        return D[n][k]
+topdown(N,K)
+print(D)
 
 
 
